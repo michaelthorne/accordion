@@ -1,0 +1,27 @@
+.accordion {
+  background-color: #f0f0f0;
+  margin-left: auto;
+  max-width: 240px;
+}
+
+.accordion-item {
+  padding: 16px;
+}
+
+.accordion-item__header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.accordion-item__label {
+  padding-right: 16px;
+}
+
+.accordion-item__icon {
+  height: 24px;
+  width: 24px;
+}
+
+.accordion-item__toggle {
+
+}
