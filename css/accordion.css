@@ -1,27 +1,82 @@
 .accordion {
-  background-color: #f0f0f0;
+  background-color: #f1f1f1;
   margin-left: auto;
-  max-width: 240px;
+  max-width: 200px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  transition: max-width 0.25s;
+}
+
+.accordion.is-active {
+  max-width: 320px;
 }
 
 .accordion-item {
-  padding: 16px;
-}
-
-.accordion-item__header {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.accordion-item__label {
+  padding-left: 16px;
   padding-right: 16px;
 }
 
-.accordion-item__icon {
-  height: 24px;
-  width: 24px;
+.accordion-item__header {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 
-.accordion-item__toggle {
+.accordion-item__header.is-active .accordion-item__label {
+  color: #111;
+}
 
+.accordion-item__header.is-active .accordion-item__icon svg {
+  fill: #111;
+}
+
+.accordion-item__header.is-inactive .accordion-item__label {
+  color: #ddd;
+}
+
+.accordion-item__header.is-inactive .accordion-item__icon svg {
+  fill: #ddd;
+}
+
+.accordion-item__header:focus .accordion-item__label,
+.accordion-item__header:hover .accordion-item__label {
+  color: #111;
+}
+
+.accordion-item__header:focus .accordion-item__icon svg,
+.accordion-item__header:hover .accordion-item__icon svg {
+  fill: #111;
+}
+
+.accordion-item__label {
+  color: #aaa;
+  padding-right: 16px;
+  transition: color 0.25s;
+}
+
+.accordion-item__icon {
+  display: flex;
+  height: 20px;
+  width: 20px;
+}
+
+.accordion-item__icon svg {
+  height: 20px;
+  transition: fill 0.25s;
+  width: 20px;
+}
+
+.accordion-item__icon svg {
+  fill: #aaa;
+}
+
+.accordion-item__body {
+  display: none;
+}
+
+.accordion-item__header.is-active + .accordion-item__body {
+  display: block;
 }
