@@ -5,6 +5,7 @@
 .accordion {
   margin-left: auto;
   max-width: 160px;
+  padding: 16px;
   transition: max-width 0.25s;
 }
 
