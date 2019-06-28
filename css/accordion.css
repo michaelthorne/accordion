@@ -49,12 +49,10 @@
   white-space: nowrap;
 }
 
-.accordion-item__button:focus {
-  outline: none;
-}
-
+.accordion-item__button:focus,
 .accordion-item__button:hover {
   background-color: var(--tepidXXL);
+  outline: none;
 }
 
 .accordion.is-active .accordion-item:not(.is-active) .accordion-item__button:focus .accordion-item__label,
@@ -128,13 +126,12 @@
  */
 
 .accordion-item__content {
+  opacity: 0;
   padding-top: 16px;
 }
 
 .accordion-item.is-active .accordion-item__content {
-  animation-duration: 0.5s;
-  animation-timing-function: ease-out;
-  animation-name: fadeIn;
+  animation: fadeIn 0.25s ease-out 0.25s forwards;
 }
 
 @keyframes fadeIn {

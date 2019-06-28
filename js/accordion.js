@@ -7,6 +7,10 @@ const resetAccordionItems = (activeAccordionItem) => {
     .forEach(accordionItem => {
       accordionItem.classList.remove('is-active')
       accordionItem.querySelector('.accordion-item__body').style.height = '0'
+
+      Array.from(accordionItem.querySelectorAll('input')).forEach(input => {
+        input.setAttribute('tabindex', '-1')
+      })
     })
 }
 
@@ -27,17 +31,18 @@ const toggleAccordionItem = (event) => {
   const activeAccordionItemBody = activeAccordionItem.querySelector('.accordion-item__body')
   const activeAccordionItemHeight = activeAccordionItemBody.querySelector('.accordion-item__content').offsetHeight
 
-  // Toggle the height of the accordion body container
+  // Update the accordion item height and active class of the accordion
   if (activeAccordionItem.classList.contains('is-active')) {
     activeAccordionItemBody.style.height = `${activeAccordionItemHeight}px`
-  } else {
-    activeAccordionItemBody.style.height = '0'
-  }
-
-  // Toggle the active class on the entire accordion if there is an active item
-  if (activeAccordionItem.classList.contains('is-active')) {
+    Array.from(activeAccordionItemBody.querySelectorAll('input')).forEach(input => {
+      input.removeAttribute('tabindex')
+    })
     accordion.classList.add('is-active')
   } else {
+    activeAccordionItemBody.style.height = '0'
+    Array.from(activeAccordionItemBody.querySelectorAll('input')).forEach(input => {
+      input.setAttribute('tabindex', '-1')
+    })
     accordion.classList.remove('is-active')
   }
 }
