@@ -1,0 +1,144 @@
+/**
+ * Accordion
+ */
+
+.Accordion {
+  margin-left: auto;
+  max-width: 160px;
+  padding: 16px;
+  transition: max-width 0.25s;
+}
+
+.Accordion.is-active {
+  max-width: 248px;
+}
+
+/**
+ * Item
+ */
+
+.Accordion-item {
+  padding-bottom: 16px;
+}
+
+/**
+ * Header
+ */
+
+.Accordion-item__header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/**
+ * Button
+ */
+
+.Accordion-item__button {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  padding: 8px 16px;
+  transition: background-color 0.25s;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.Accordion-item__button:focus,
+.Accordion-item__button:hover {
+  background-color: var(--tepidXXL);
+  outline: none;
+}
+
+.Accordion.is-active .Accordion-item:not(.is-active) .Accordion-item__button:focus .Accordion-item__label,
+.Accordion.is-active .Accordion-item:not(.is-active) .Accordion-item__button:hover .Accordion-item__label {
+  color: var(--gratefulLight);
+}
+
+.Accordion-item.is-active .Accordion-item__button,
+.Accordion-item.is-active .Accordion-item__button {
+  background-color: var(--tepidXXXL);
+  outline: none;
+}
+
+/**
+ * Label
+ */
+
+.Accordion-item__label {
+  color: var(--gratefulLight);
+  padding-right: 8px;
+  pointer-events: none;
+  transition: color 0.25s;
+}
+
+.Accordion.is-active .Accordion-item:not(.is-active) .Accordion-item__label {
+  color: var(--tepidXXL);
+}
+
+/**
+ * Icon
+ */
+
+.Accordion-item__icon {
+  display: flex;
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+}
+
+.Accordion-item__icon svg {
+  height: 20px;
+  transition: fill 0.25s;
+  width: 20px;
+}
+
+.Accordion-item__icon svg {
+  fill: var(--tepidLight);
+}
+
+.Accordion.is-active .Accordion-item:not(.is-active) .Accordion-item__icon svg {
+  fill: var(--tepidXXL);
+}
+
+.Accordion.is-active .Accordion-item:not(.is-active) .Accordion-item__button:focus .Accordion-item__icon svg,
+.Accordion.is-active .Accordion-item:not(.is-active) .Accordion-item__button:hover .Accordion-item__icon svg {
+  fill: var(--tepidLight);
+}
+
+/**
+ * Content
+ */
+
+.Accordion-item__body {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.25s ease-out;
+}
+
+/**
+ * Content
+ */
+
+.Accordion-item__content {
+  opacity: 0;
+  padding-top: 16px;
+}
+
+.Accordion-item.is-active .Accordion-item__content {
+  animation: fadeIn 0.25s ease-out 0.25s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

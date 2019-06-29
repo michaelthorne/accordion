@@ -1,0 +1,43 @@
+:root {
+  --white: #fff;
+  --whiteDark: #fafafa;
+  --aggressive: #ff5858;
+  --yoloDark: #ffc100;
+  --yoloYellow: #fccf00;
+  --gratefulDark: #484243;
+  --grateful: #564f50;
+  --gratefulLight: #675e60;
+  --tepid: #9a8e90;
+  --tepidLight: #b7a8a8;
+  --tepidXL: #d8cecc;
+  --tepidXXL: #e5dfdd;
+  --tepidXXXL: #f2efee;
+}
+
+html {
+  box-sizing: border-box;
+  color: var(--tepidLight);
+  font-family: sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 16px;
+}

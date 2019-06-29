@@ -1,0 +1,24 @@
+.App {
+  height: 100%;
+}
+
+.App-nav {
+  background-color: var(--tepidXXL);
+  height: 48px;
+}
+
+.App-body {
+  display: flex;
+  height: calc(100vh - 48px);
+}
+
+.App-body__main {
+  background-color: var(--tepidXXXL);
+  flex: 1;
+}
+
+.App-body__aside {
+  align-items: center;
+  display: flex;
+  overflow-y: auto;
+}
