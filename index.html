@@ -68,13 +68,18 @@
     }
 
     .app-nav {
-      background-color: var(--tepidXXL);
+      background-color: var(--tepid);
       height: 48px;
     }
 
     .app-body {
       display: flex;
       height: calc(100vh - 48px);
+    }
+
+    .app-body__panel {
+      background-color: var(--tepidXL);
+      width: 240px;
     }
 
     .app-body__main {
@@ -87,12 +92,19 @@
       display: flex;
       overflow-y: auto;
     }
+
+    .app-body__utils {
+      background-color: var(--tepidXXL);
+      height: 100%;
+      width: 72px;
+    }
   </style>
 </head>
 <body>
   <main class="app">
     <div class="app-nav"></div>
     <div class="app-body">
+      <div class="app-body__panel"></div>
       <div class="app-body__main"></div>
       <div class="app-body__aside">
         <div class="accordion">
@@ -257,6 +269,8 @@
           </div>
           <!-- / Crop -->
         </div>
+
+        <div class="app-body__utils"></div>
       </div>
     </div>
   </main>
