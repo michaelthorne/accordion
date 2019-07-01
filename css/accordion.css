@@ -3,7 +3,10 @@
  */
 
 .accordion {
+  margin-bottom: auto;
   margin-left: auto;
+  margin-top: auto;
+  max-height: 100%;
   max-width: 160px;
   padding: 16px;
   transition: max-width 0.25s;
