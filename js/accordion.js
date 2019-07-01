@@ -48,3 +48,21 @@ const toggleAccordionItem = (event) => {
 }
 
 accordion.addEventListener('click', toggleAccordionItem)
+
+const toggleUtils = document.querySelector('#toggleUtils')
+
+toggleUtils.addEventListener('click', (e) => {
+  e.preventDefault()
+
+  const utils = document.querySelector('.app-body__utils')
+  utils.classList.toggle('is-active')
+})
+
+const toggleNav = document.querySelector('#toggleNav')
+
+toggleNav.addEventListener('click', (e) => {
+  e.preventDefault()
+
+  const nav = document.querySelector('.app-body__nav')
+  nav.classList.toggle('is-active')
+})

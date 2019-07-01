@@ -23,8 +23,11 @@
   <link href="css/main.css" rel="stylesheet" />
   <link href="css/accordion.css" rel="stylesheet" />
   <style>
-    html {
+    * {
       box-sizing: border-box;
+    }
+
+    html {
       color: var(--tepidLight);
       font-family: sans-serif;
     }
@@ -79,12 +82,20 @@
 
     .app-body__nav {
       background-color: var(--tepidXL);
-      width: 240px;
+      padding: 16px 8px;
+      transition: width 0.25s;
+      width: 80px;
+    }
+
+    .app-body__nav.is-active {
+      width: 320px;
     }
 
     .app-body__main {
       background-color: var(--tepidXXXL);
       flex: 1;
+      overflow: auto;
+      padding: 32px;
     }
 
     .app-body__aside {
@@ -94,9 +105,30 @@
     }
 
     .app-body__utils {
+      align-items: flex-start;
       background-color: var(--tepidXXL);
+      display: flex;
       height: 100%;
-      width: 72px;
+      justify-content: center;
+      padding: 16px 8px;
+      transition: width 0.25s;
+      width: 80px;
+    }
+
+    .app-body__utils.is-active {
+      width: 144px;
+    }
+
+    .toggle {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      flex: 0;
+    }
+
+    .toggle:focus,
+    .toggle:hover {
+      outline: none;
     }
   </style>
 </head>
@@ -104,8 +136,13 @@
   <main class="app">
     <div class="app-nav"></div>
     <div class="app-body">
-      <div class="app-body__nav"></div>
-      <div class="app-body__main"></div>
+      <div class="app-body__nav">
+        <button id="toggleNav" class="toggle">Toggle</button>
+      </div>
+
+      <div class="app-body__main">
+        <img src="https://place-hold.it/1500x1000" width="1500" height="1000" alt="" />
+      </div>
 
       <div class="app-body__aside">
         <div class="accordion">
@@ -241,7 +278,7 @@
                 <span class="accordion-item__icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
-                          d="M488 352h-40V109.25l59.31-59.31c6.25-6.25 6.25-16.38 0-22.63L484.69 4.69c-6.25-6.25-16.38-6.25-22.63 0L402.75 64H192v96h114.75L160 306.75V24c0-13.26-10.75-24-24-24H88C74.75 0 64 10.74 64 24v40H24C10.75 64 0 74.74 0 88v48c0 13.25 10.75 24 24 24h40v264c0 13.25 10.75 24 24 24h232v-96H205.25L352 205.25V488c0 13.25 10.75 24 24 24h48c13.25 0 24-10.75 24-24v-40h40c13.25 0 24-10.75 24-24v-48c0-13.26-10.75-24-24-24z" />
+                        d="M488 352h-40V109.25l59.31-59.31c6.25-6.25 6.25-16.38 0-22.63L484.69 4.69c-6.25-6.25-16.38-6.25-22.63 0L402.75 64H192v96h114.75L160 306.75V24c0-13.26-10.75-24-24-24H88C74.75 0 64 10.74 64 24v40H24C10.75 64 0 74.74 0 88v48c0 13.25 10.75 24 24 24h40v264c0 13.25 10.75 24 24 24h232v-96H205.25L352 205.25V488c0 13.25 10.75 24 24 24h48c13.25 0 24-10.75 24-24v-40h40c13.25 0 24-10.75 24-24v-48c0-13.26-10.75-24-24-24z" />
                   </svg>
                 </span>
               </button>
@@ -271,7 +308,9 @@
           <!-- / Crop -->
         </div>
 
-        <div class="app-body__utils"></div>
+        <div class="app-body__utils">
+          <button id="toggleUtils" class="toggle">Toggle</button>
+        </div>
       </div>
     </div>
   </main>
