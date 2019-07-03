@@ -29,7 +29,7 @@ const toggleAccordionItem = (event) => {
   resetAccordionItems(activeAccordionItem)
 
   const activeAccordionItemBody = activeAccordionItem.querySelector('.accordion-item__body')
-  const activeAccordionItemHeight = activeAccordionItemBody.querySelector('.accordion-item__content').offsetHeight
+  const activeAccordionItemHeight = activeAccordionItemBody.scrollHeight
 
   // Update the accordion item height and active class of the accordion
   if (activeAccordionItem.classList.contains('is-active')) {
